@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>476</width>
-    <height>465</height>
+    <width>475</width>
+    <height>440</height>
    </rect>
   </property>
   <property name="font">
@@ -24,76 +24,27 @@
      <rect>
       <x>70</x>
       <y>60</y>
-      <width>331</width>
-      <height>301</height>
+      <width>341</width>
+      <height>271</height>
      </rect>
     </property>
-    <layout class="QGridLayout" name="gridLayout" rowstretch="3,3,3,3,3,0" columnstretch="1,0">
+    <layout class="QGridLayout" name="gridLayout" rowstretch="4,4,0,0,0" columnstretch="1,2">
      <property name="sizeConstraint">
       <enum>QLayout::SetNoConstraint</enum>
      </property>
-     <item row="2" column="1">
-      <widget class="QDoubleSpinBox" name="SetPoint_control">
-       <property name="font">
-        <font>
-         <pointsize>16</pointsize>
-        </font>
-       </property>
-       <property name="layoutDirection">
-        <enum>Qt::LeftToRight</enum>
-       </property>
-       <property name="alignment">
-        <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-       </property>
-       <property name="decimals">
-        <number>1</number>
-       </property>
-       <property name="maximum">
-        <double>200.000000000000000</double>
-       </property>
-       <property name="singleStep">
-        <double>0.100000000000000</double>
-       </property>
-      </widget>
-     </item>
-     <item row="1" column="0">
-      <widget class="QLabel" name="label_2">
+     <item row="0" column="0">
+      <widget class="QLabel" name="label">
        <property name="font">
         <font>
          <pointsize>20</pointsize>
         </font>
        </property>
        <property name="text">
-        <string>SetPoint</string>
+        <string>PV</string>
        </property>
       </widget>
      </item>
-     <item row="1" column="1">
-      <widget class="QLCDNumber" name="SetPoint_indicator">
-       <property name="layoutDirection">
-        <enum>Qt::LeftToRight</enum>
-       </property>
-       <property name="styleSheet">
-        <string notr="true">QLCDNumber{
-    color: rgb(0, 255, 0);    
-    background-color: rgb(0, 0, 0);
-}</string>
-       </property>
-       <property name="smallDecimalPoint">
-        <bool>true</bool>
-       </property>
-       <property name="digitCount">
-        <number>4</number>
-       </property>
-       <property name="segmentStyle">
-        <enum>QLCDNumber::Flat</enum>
-       </property>
-       <property name="value" stdset="0">
-        <double>0.000000000000000</double>
-       </property>
-      </widget>
-     </item>
-     <item row="4" column="1">
+     <item row="3" column="1">
       <layout class="QVBoxLayout" name="verticalLayout_4">
        <property name="spacing">
         <number>0</number>
@@ -144,10 +95,50 @@
        </item>
       </layout>
      </item>
+     <item row="3" column="0">
+      <widget class="QPushButton" name="Power_button">
+       <property name="font">
+        <font>
+         <pointsize>14</pointsize>
+        </font>
+       </property>
+       <property name="text">
+        <string>ON / OFF</string>
+       </property>
+       <property name="checkable">
+        <bool>true</bool>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="0">
+      <widget class="QLabel" name="label_2">
+       <property name="font">
+        <font>
+         <pointsize>20</pointsize>
+        </font>
+       </property>
+       <property name="text">
+        <string>SetPoint</string>
+       </property>
+      </widget>
+     </item>
+     <item row="2" column="0">
+      <widget class="QLabel" name="label_3">
+       <property name="font">
+        <font>
+         <pointsize>20</pointsize>
+        </font>
+       </property>
+       <property name="text">
+        <string>SP Control</string>
+       </property>
+      </widget>
+     </item>
      <item row="0" column="1">
       <widget class="QLCDNumber" name="PV_indicator">
        <property name="font">
         <font>
+         <pointsize>16</pointsize>
          <weight>50</weight>
          <bold>false</bold>
         </font>
@@ -172,7 +163,56 @@
        </property>
       </widget>
      </item>
-     <item row="3" column="0">
+     <item row="2" column="1">
+      <widget class="QDoubleSpinBox" name="SetPoint_control">
+       <property name="font">
+        <font>
+         <pointsize>16</pointsize>
+        </font>
+       </property>
+       <property name="layoutDirection">
+        <enum>Qt::LeftToRight</enum>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+       </property>
+       <property name="decimals">
+        <number>1</number>
+       </property>
+       <property name="maximum">
+        <double>200.000000000000000</double>
+       </property>
+       <property name="singleStep">
+        <double>0.100000000000000</double>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="1">
+      <widget class="QLCDNumber" name="SetPoint_indicator">
+       <property name="layoutDirection">
+        <enum>Qt::LeftToRight</enum>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QLCDNumber{
+    color: rgb(0, 255, 0);    
+    background-color: rgb(0, 0, 0);
+}</string>
+       </property>
+       <property name="smallDecimalPoint">
+        <bool>true</bool>
+       </property>
+       <property name="digitCount">
+        <number>4</number>
+       </property>
+       <property name="segmentStyle">
+        <enum>QLCDNumber::Flat</enum>
+       </property>
+       <property name="value" stdset="0">
+        <double>0.000000000000000</double>
+       </property>
+      </widget>
+     </item>
+     <item row="4" column="0">
       <widget class="QLabel" name="label_5">
        <property name="font">
         <font>
@@ -180,89 +220,34 @@
         </font>
        </property>
        <property name="text">
-        <string>Power</string>
+        <string>Ramp Rate</string>
        </property>
       </widget>
      </item>
-     <item row="0" column="0">
-      <widget class="QLabel" name="label">
+     <item row="4" column="1">
+      <widget class="QDoubleSpinBox" name="RampRate_control">
        <property name="font">
         <font>
-         <pointsize>20</pointsize>
+         <pointsize>16</pointsize>
         </font>
-       </property>
-       <property name="text">
-        <string>PV</string>
-       </property>
-      </widget>
-     </item>
-     <item row="2" column="0">
-      <widget class="QLabel" name="label_3">
-       <property name="font">
-        <font>
-         <pointsize>20</pointsize>
-        </font>
-       </property>
-       <property name="text">
-        <string>SP Control</string>
-       </property>
-      </widget>
-     </item>
-     <item row="3" column="1">
-      <widget class="QPushButton" name="Power_button">
-       <property name="font">
-        <font>
-         <pointsize>14</pointsize>
-        </font>
-       </property>
-       <property name="text">
-        <string>ON / OFF</string>
-       </property>
-       <property name="checkable">
-        <bool>true</bool>
-       </property>
-      </widget>
-     </item>
-     <item row="4" column="0">
-      <widget class="QLabel" name="Timer_indicator">
-       <property name="enabled">
-        <bool>true</bool>
-       </property>
-       <property name="font">
-        <font>
-         <pointsize>24</pointsize>
-         <kerning>true</kerning>
-        </font>
-       </property>
-       <property name="toolTip">
-        <string comment="1"/>
        </property>
        <property name="layoutDirection">
         <enum>Qt::LeftToRight</enum>
        </property>
-       <property name="frameShape">
-        <enum>QFrame::WinPanel</enum>
-       </property>
-       <property name="frameShadow">
-        <enum>QFrame::Plain</enum>
-       </property>
-       <property name="lineWidth">
-        <number>1</number>
-       </property>
-       <property name="midLineWidth">
-        <number>0</number>
-       </property>
-       <property name="text">
-        <string>3:00:00</string>
-       </property>
-       <property name="textFormat">
-        <enum>Qt::AutoText</enum>
-       </property>
        <property name="alignment">
         <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
        </property>
-       <property name="wordWrap">
-        <bool>false</bool>
+       <property name="decimals">
+        <number>1</number>
+       </property>
+       <property name="maximum">
+        <double>200.000000000000000</double>
+       </property>
+       <property name="singleStep">
+        <double>0.100000000000000</double>
+       </property>
+       <property name="value">
+        <double>5.000000000000000</double>
        </property>
       </widget>
      </item>
@@ -292,7 +277,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>476</width>
+     <width>475</width>
      <height>43</height>
     </rect>
    </property>

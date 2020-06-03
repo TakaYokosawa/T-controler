@@ -53,7 +53,8 @@ class main_window(QtWidgets.QMainWindow, Ui_OmronMainWindow):
         while self._is_timer_on:
             time.sleep(1)
             self._remaining_time = self._remaining_time.addSecs(-1)
-            self.Timer_indicator.setText(self._remaining_time.toString())
+            self.Timer_control.setTime(self._remaining_time)
+            # self.Timer_indicator.setText(self._remaining_time.toString())
             if self._remaining_time == QtCore.QTime(0, 0, 0):
                 self.power_toggle()
                 self.timer_toggle()
@@ -83,7 +84,7 @@ class main_window(QtWidgets.QMainWindow, Ui_OmronMainWindow):
 
     def set_timer(self):
         self._remaining_time = self.Timer_control.time()
-        self.Timer_indicator.setText(self._remaining_time.toString())
+        # self.Timer_indicator.setText(self._remaining_time.toString())
         
     def power_on(self):
         self._rlock.acquire()
