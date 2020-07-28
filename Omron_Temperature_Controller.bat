@@ -4,5 +4,4 @@ if not "%~0"=="%~dp0.\%~nx0" (
 )
 
 cd C:\Users\User\Tcontroller
-call .\.tcontroller\Scripts\activate
-python Omron_temperature_controller.py
+PowerShell -command "conda activate TController; python Omron_temperature_controller.py"
