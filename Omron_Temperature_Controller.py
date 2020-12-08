@@ -84,13 +84,19 @@ class main_window(QtWidgets.QMainWindow, Ui_OmronMainWindow):
         setpoint = self.SetPoint_control.value()
         while setpoint != self._setpoint and self._is_subprocess_running:
             if setpoint > self._setpoint:
-                if self._pv >= self._setpoint:
-                    setpoint = min(setpoint, self._setpoint + self.RampRate_control.value())
+                if self._pv >= self._setpoint - 5:\ 
+                    ## TODO: find good value to be smooth, use ratio? 
+                    setpoint = min(
+                            setpoint, 
+                            self._setpoint + self.RampRate_control.value()
+                        )
                 else:
                     setpoint = self._setpoint
             else:
-                if self._pv <= self._setpoint:
-                    setpoint = max(setpoint, self._setpoint - self.RampRate_control.value())
+                if self._pv <= self._setpoint + 5:
+                    setpoint = max(
+                            setpoint, self._setpoint - self.RampRate_control.value()
+                        )
                 else:
                     setpoint = self._setpoint
             self._rlock.acquire()
