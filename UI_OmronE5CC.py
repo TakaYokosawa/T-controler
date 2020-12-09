@@ -125,7 +125,7 @@ class Ui_OmronMainWindow(object):
         self.RampRate_control.setDecimals(1)
         self.RampRate_control.setMaximum(200.0)
         self.RampRate_control.setSingleStep(0.1)
-        self.RampRate_control.setProperty("value", 5.0)
+        self.RampRate_control.setProperty("value", 200.0)
         self.RampRate_control.setObjectName("RampRate_control")
         self.gridLayout.addWidget(self.RampRate_control, 4, 1, 1, 1)
         self.gridLayout.setColumnStretch(0, 1)
